@@ -8,10 +8,9 @@ class Product:
 			self.tax = tax
 		def price_with_tax(self):
 			return self.price * self.count * self.tax
-		
-robot = Product(price= 900, count= 2, tax= 1.25)
-book = Product(price= 100, count= 1, tax= 1.06)
-husvagn = Product(price= 1000, count=1, tax= 1.25)
-print(robot.price_with_tax() + book.price_with_tax() + husvagn.price_with_tax())
+
+products = [Product(price= 900, count= 2, tax= 1.25), Product(price= 100, count= 1, tax= 1.06), Product(price= 1000, count=1, tax= 1.25)]
+total_price = products[0].price_with_tax() + products[1].price_with_tax() + products[2].price_with_tax()
+print(total_price)
 
 
