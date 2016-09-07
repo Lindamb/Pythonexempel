@@ -2,10 +2,13 @@ class Product:
 		price = 0
 		count = 0
 		tax = 1
-		def __init__(self, price, count, tax):
+		name = "0"
+		def __init__(self, name, price, count, tax):
+			self.name = name
 			self.price = price
 			self.count = count
 			self.tax = tax
+
 		def price_with_tax(self):
 			itemtotal = self.price * self.count * self.tax
 			if itemtotal> 500:
@@ -14,10 +17,12 @@ class Product:
 				return itemtotal
 				
 
-products = [Product(price= 900, count= 2, tax= 1.25), Product(price= 100, count= 1, tax= 1.06), Product(price= 1000, count=1, tax= 1.25)]
+products = [Product(name = "Robban", price = 900, count = 2, tax = 1.25), Product(name = "Bibeln", price = 100, count= 1, tax= 1.06), Product(name = "Solifer", price= 1000, count=1, tax= 1.25), Product(name = "luftballong", price= 100, count=1, tax= 1.25)]
 total_price = 0
 for product in products:
 	total_price += product.price_with_tax()
+for product in products:
+	print(product.name, product.price_with_tax())
 print(total_price)
 
 
